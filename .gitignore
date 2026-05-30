@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Training data and newly generated runs are intentionally local.
+data/train/
+data/test/
+artifacts/new_runs/
+ucsc-cse-144-spring-2026-final-project/
+
+# Imported filesystem metadata is retained locally but is not project source.
+artifacts/imported_volume_metadata/
+
+# Prior experiment exports and checkpoints remain local. The README documents them.
+artifacts/previous_runs/
+
+# macOS metadata files may appear when folders are copied from external drives.
+.DS_Store
+._*
+
+# Local legacy copy; the maintained standalone notebook lives under notebooks/.
+/H100_Complete_Ensemble_Code.ipynb

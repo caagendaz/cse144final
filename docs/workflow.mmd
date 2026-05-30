@@ -1,0 +1,31 @@
+flowchart TD
+    A[Training images grouped by class] --> B[Stratified K-fold split]
+    B --> C1[ConvNeXt Large folds]
+    B --> C2[Swin Base folds]
+    B --> C3[EVA02 Large seed A folds]
+    B --> C4[EVA02 Large seed B folds]
+
+    C1 --> D1[Best checkpoint per fold]
+    C2 --> D2[Best checkpoint per fold]
+    C3 --> D3[Best checkpoint per fold]
+    C4 --> D4[Best checkpoint per fold]
+
+    D1 --> E1[OOF predictions and TTA comparison]
+    D2 --> E2[OOF predictions and TTA comparison]
+    D3 --> E3[OOF predictions and TTA comparison]
+    D4 --> E4[OOF predictions and TTA comparison]
+
+    E1 --> F[Weight each fold by validation loss]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+
+    F --> G[Search model weights and blend method using OOF predictions]
+    H[Test images] --> I[Weighted fold inference]
+    D1 --> I
+    D2 --> I
+    D3 --> I
+    D4 --> I
+    G --> J[Apply learned blend to test probabilities]
+    I --> J
+    J --> K[Submission CSV and probability array]
