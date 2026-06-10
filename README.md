@@ -58,23 +58,6 @@ The improved configuration trains two EVA02 variants with different random seeds
 
 https://drive.google.com/drive/u/0/folders/1UNRq0jdWflMxFF0EVncCcCD-Y7RxajYv
 
-## Improvements Implemented
-
-The reorganized pipeline adds the following changes:
-
-1. **Out-of-fold ensemble optimization.** Each model predicts images excluded from its training fold. The code learns final non-negative model weights from those OOF predictions instead of using hand-written family weights.
-2. **Blend-method selection.** Validation data chooses between arithmetic probability averaging and log-probability averaging.
-3. **Weighted fold averaging.** Lower-loss folds contribute more to test predictions, while every fold retains some influence.
-4. **Optional exponential moving average checkpoints.** EMA can smooth parameter updates, but it duplicates model weights in memory. The memory-conscious defaults leave it disabled; enable it per variant only when the GPU has room.
-5. **Model-specific preprocessing.** Validation normalization, resizing, and interpolation come from each pretrained `timm` model configuration.
-6. **Validation-selected TTA.** The pipeline compares ordinary inference with horizontal-flip test-time augmentation using OOF predictions and keeps the better option separately for each model variant.
-7. **Class-imbalance handling.** A weighted sampler activates automatically when the largest class is at least `1.5x` the size of the smallest class.
-8. **Discriminative learning rates.** The pretrained backbone receives a smaller learning rate than the newly initialized classification head.
-9. **Full-data usage.** Training no longer drops the final partial batch of each epoch.
-10. **Memory-conscious training.** Smaller micro-batches use gradient accumulation, supported `timm` models enable activation checkpointing, `AdamW` avoids the higher-peak-memory `foreach` path, and checkpoint inference avoids loading a duplicate state dictionary onto the GPU.
-
-The code deliberately does not enable a non-native EVA02 image resolution by default. That experiment remains useful, but it should be added only after confirming that the selected `timm` checkpoint supports the alternative patch grid cleanly.
-
 ## Validation Strategy
 
 The dataset is split with four-fold stratified cross-validation. Stratification preserves the class distribution in every fold.
