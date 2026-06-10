@@ -54,6 +54,10 @@ EVA02 is the strongest individual family observed in the previous experiments. I
 
 The improved configuration trains two EVA02 variants with different random seeds and slightly different optimization settings. This spends more compute on the strongest family while retaining independently trained predictions for diversity.
 
+## Training data
+
+https://drive.google.com/drive/u/0/folders/1UNRq0jdWflMxFF0EVncCcCD-Y7RxajYv
+
 ## Improvements Implemented
 
 The reorganized pipeline adds the following changes:
