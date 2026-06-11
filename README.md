@@ -167,7 +167,7 @@ improved_oof_ensemble/
 
 The final JSON records model names, hyperparameters, TTA decisions, fold weights, OOF metrics, and learned ensemble weights so the submission can be audited later.
 ## Kaggle Public Score
-<img width="1240" height="493" alt="Screenshot 2026-06-10 at 12 12 34 PM" src="https://github.com/user-attachments/assets/73246d76-d64c-48f4-8f4c-03c4b36fbde1" />
+![CSE 144 Spring Quarter Kaggle Final Project Leaderboard Ranking for Jason Vu, Cagn Steinbrecher, and Dominic Marella](CSE%20144%20Spring%20Quarter%20Kaggle%20Final%20Project%20Leaderboard%20Ranking%20for%20Jason%20Vu%2C%20Cagn%20Steinbrecher%2C%20and%20Dominic%20Marella.png)
 
 ## Tests
 
