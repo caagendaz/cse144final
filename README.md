@@ -166,7 +166,7 @@ improved_oof_ensemble/
 ```
 
 The final JSON records model names, hyperparameters, TTA decisions, fold weights, OOF metrics, and learned ensemble weights so the submission can be audited later.
-## Kaggle Public Score
+## Kaggle Leaderboard Ranking Group Vu, Steinbrecher, Marella
 <img width="1240" height="493" alt="Screenshot 2026-06-10 at 12 12 34 PM" src="https://github.com/user-attachments/assets/73246d76-d64c-48f4-8f4c-03c4b36fbde1" />
 
 ## Tests
